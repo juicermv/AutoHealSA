@@ -1,5 +1,5 @@
 # AutoHealSA
- A simple mod that replicates GTA V's healing behaviour in GTA SA
+ A simple mod that replicates GTA V's healing behaviour in GTA SA.
 
 ## How does it work?
 
