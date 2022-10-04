@@ -15,6 +15,7 @@
 *.so
 *.dylib
 *.dll
+*.asi
 
 # Fortran module files
 *.mod
@@ -30,3 +31,15 @@
 *.exe
 *.out
 *.app
+
+# IDE Environment folders
+.vs/
+.vscode/
+.idea/
+
+# Output dirs
+Release/
+Debug/
+
+# Visual Studio per-user project preferences
+*.vcxproj.user
