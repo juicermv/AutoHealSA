@@ -15,7 +15,7 @@ AutoHealSA::AutoHealSA()
 		:
 			(
 				(FindPlayerPed(0)->m_fHealth >= this->PrevHealth)
-				&& (FindPlayerPed(0)->m_fHealth < (maxHealth/100)*75)
+				&& (FindPlayerPed(0)->m_fHealth < (maxHealth/100)*85)
 			);
 
 		if (!Heal) {
@@ -36,7 +36,7 @@ AutoHealSA::AutoHealSA()
 				0.0f, maxHealth/2
 			) : std::clamp(
 				Health + ((maxHealth / 100) * this->Rate),
-				0.0f, (maxHealth/100)*75
+				0.0f, (maxHealth/100)*85
 			);
 
 			this->Time += 0.1f;
