@@ -40,6 +40,7 @@
     <IncludePath>$(IncludePath);$(DIRECTX9_SDK_DIR)\Include\</IncludePath>
     <LibraryPath>$(LibraryPath);$(DIRECTX9_SDK_DIR)\Lib\x86\</LibraryPath>
     <TargetExt>.asi</TargetExt>
+    <OutDir>$(SolutionDir)\bin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
