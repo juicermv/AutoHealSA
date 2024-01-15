@@ -7,7 +7,7 @@ When CJ gets damaged, a short timer will start counting down. Once that timer re
 
 ## Installation
 
-Simply drop the .asi file which you can get from the releases section in your scripts folder.
+Download the latest build from one of the artifacts under the Actions tab, and then drop it into your scripts folder.
 
 ---
 
