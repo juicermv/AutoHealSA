@@ -35,23 +35,16 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v2
 
-    - name: Set PLUGIN_SDK_DIR
-      run: echo "PLUGIN_SDK_DIR=${{runner.temp}}/pluginsdk" | Out-File -FilePath $env:GITHUB_ENV
-
-    - name: Download latest PluginSDK build
-      run: gh release download -R juicermv/plugin-sdk -p '*.zip' --dir "${{runner.temp}}"
-      
-    - name: Extract downloaded build
-      working-directory: ${{runner.temp}}
-      run: 7z x release.zip -y -o${{runner.temp}}/pluginsdk
-      
-    - name: Build plugin
+    - name: Download numake
+      run: gh release download indev -R juicermv/numake -p '*.exe' --dir "${{runner.temp}}"
+  
+    - name: Build using numake
       working-directory: ${{env.GITHUB_WORKFLOW}}
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=Win32 ${{env.SOLUTION_FILE_PATH}}
+      run: ."${{runner.temp}}/numake.exe" build * 
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: AutoHealSA.asi
-        path: AutoHealSA/bin/*.asi
+        name: AutoHealSA
+        path: ./.numake/out/AutoHealSA
       

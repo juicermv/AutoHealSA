@@ -43,3 +43,6 @@ Debug/
 
 # Visual Studio per-user project preferences
 *.vcxproj.user
+
+# NuMake
+.numake
