@@ -62,6 +62,6 @@ project.assets = {
     ["README.md"] = "README.md",
 }
 
-project:add_dir("AutoHealSA", false, {"cpp"})
+project.files = workspace:walk_dir("AutoHealSA", false, {"cpp"})
 
 workspace:register_target(project)
