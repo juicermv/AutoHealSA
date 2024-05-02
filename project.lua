@@ -7,7 +7,7 @@ project.msvc_arch = "x86"
 project.output = "AutoHealSA.asi"
 
 project.library_paths = {
-    PLUGIN_SDK_DIR .. ".numake/out/plugin_sa",
+    PLUGIN_SDK_DIR .. "/.numake/out/plugin_sa/",
     "AutoHealSA"
 }
 
