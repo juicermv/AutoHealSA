@@ -39,7 +39,7 @@ project.libraries = {
 }
 
 project.compiler_flags = {
-    "-std=c++17",
+    "-std=gnu++23",
     "-Ofast",
     "-fpermissive",
     "-shared",
