@@ -32,9 +32,6 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
-            - name: Add MSBuild to PATH
-              uses: microsoft/setup-msbuild@v2
-
             - name: Download numake
               run: gh release download indev -R juicermv/numake --dir "${{runner.temp}}"
 
