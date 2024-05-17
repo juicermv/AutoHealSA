@@ -1,26 +1,26 @@
 --! NUMAKE PROJECT
+PLUGIN_SDK_DIR = workspace:download_zip("https://github.com/juicermv/plugin-sdk/releases/latest/download/mingw.zip")
 
-PLUGIN_SDK_DIR = workspace:download_zip("https://github.com/juicermv/plugin-sdk/releases/latest/download/release.zip")
-
-project = workspace:create_msvc_target("AutoHealSA")
-project.arch = "x86"
+project = workspace:create_mingw_target("AutoHealSA")
+project.arch = "i686"
 project.output = "AutoHealSA.asi"
 
 project.library_paths = {
-    PLUGIN_SDK_DIR .. "/.numake/out/plugin_sa/",
+    PLUGIN_SDK_DIR .. "/lib/plugin_sa/",
     "AutoHealSA"
 }
 
 project.include_paths = {
     PLUGIN_SDK_DIR,
-    PLUGIN_SDK_DIR .. "\\plugin_sa\\",
-    PLUGIN_SDK_DIR .. "\\plugin_sa\\game_sa\\",
-    PLUGIN_SDK_DIR .. "\\shared\\",
-    PLUGIN_SDK_DIR .. "\\shared\\game"
+    PLUGIN_SDK_DIR .. "/plugin_sa/",
+    PLUGIN_SDK_DIR .. "/plugin_sa/game_sa/",
+    PLUGIN_SDK_DIR .. "/shared/",
+    PLUGIN_SDK_DIR .. "/shared/game"
 }
 
 project.definitions = {
-    "_NDEBUG",
+    --"_NDEBUG",
+    "_USE_MATH_DEFINES",
     "_CRT_SECURE_NO_WARNINGS",
     "_CRT_NON_CONFORMING_SWPRINTFS",
     "GTASA", 
@@ -35,27 +35,20 @@ project.definitions = {
 }
 
 project.libraries = {
-    "plugin.lib",
+    "plugin",
 }
 
 project.compiler_flags = {
-    "/Ot",
-    "/Ob1",
-    "/std:c++17",
-    "/GT",
-    "/fp:fast",
-    "/W3",
-    "/Gy",
-    "/MT",
-    "/Oi"
+    "-std=c++17",
+    "-Ofast",
+    "-fpermissive",
+    "-shared",
+    "-flto"
 }
 
 project.linker_flags = {
-    "/SUBSYSTEM:WINDOWS",
-    "/OPT:ICF",
-    "/OPT:REF",
-    "/LTCG",
-    "/DLL"
+    "--dll",
+    "--subsystem,windows"
 }
 
 project.assets = {
