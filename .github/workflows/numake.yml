@@ -48,4 +48,4 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                   name: AutoHealSA
-                  path: ./.numake/out/AutoHealSA
+                  path: ./numake/out/AutoHealSA
