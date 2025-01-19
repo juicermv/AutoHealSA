@@ -33,8 +33,8 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
-            - run: "sudo apt-get install g++-mingw-w64-i686"
-            
+            - run: 'sudo apt-get install g++-mingw-w64-i686'
+
             - name: Download numake
               run: |
                   gh release download indev -R juicermv/numake --dir "${{runner.temp}}"
@@ -42,7 +42,7 @@ jobs:
 
             - name: Build using numake
               working-directory: ${{env.GITHUB_WORKFLOW}}
-              run: ${{runner.temp}}/numake build all
+              run: ${{runner.temp}}/numake build build_mingw
 
             - name: Upload Artifact
               uses: actions/upload-artifact@v4
