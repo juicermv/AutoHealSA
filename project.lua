@@ -22,7 +22,8 @@ project = Project(
         "AutoHealSA"
     },
     {
-        "plugin",
+        "stdc++",
+        "plugin"
     },
     {
         --"_NDEBUG",
