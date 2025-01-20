@@ -13,6 +13,7 @@ project = Project(
         PLUGIN_SDK_DIR .. "/src/",
         PLUGIN_SDK_DIR .. "/src/plugin_sa/",
         PLUGIN_SDK_DIR .. "/src/plugin_sa/game_sa/",
+        PLUGIN_SDK_DIR .. "/src/plugin_sa/game_sa/rw/",
         PLUGIN_SDK_DIR .. "/src/shared/",
         PLUGIN_SDK_DIR .. "/src/shared/game"
     },
@@ -36,7 +37,8 @@ project = Project(
         "GTAGAME_CITYNAME=\"San Andreas\"", 
         "_LA_SUPPORT", 
         "_DX9_SDK_INSTALLED", 
-        "PLUGIN_SGV_10US"
+        "PLUGIN_SGV_10US",
+        "RW"
     },
     {
         "-std=gnu++23",
